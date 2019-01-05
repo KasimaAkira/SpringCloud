@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: config-server
+    #config:
+      #server:
+        #native:
+          #search-locations: classpath:/config
+          #这个search我也不知道是什么，之前git上推的配置yml格式读了报错，https://bbs.csdn.net/topics/392441999?page=1 看完这个博客加了这个配置，再把git上的格式换成properties就好了
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/princeJones/SpringCloud.git
+          username: 1327212223@qq.com
+          password: xiaojiao963
+          timeout: 5
+          default-label: master
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
